@@ -11,5 +11,4 @@ git :
 	git push origin main
 
 pip :
-	# pip install --upgrade packageName
 	echo "You can run: `pip install --upgrade packageName`"

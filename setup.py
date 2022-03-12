@@ -6,7 +6,7 @@ with open("README.md", "r") as fh:
 
 setuptools.setup(
      name='MySuperDF',
-     version="0.005",
+     version="0.006",
      scripts=['main.py'] ,
      author="Paul Ledesma",
      author_email="paul.ledesma@hotmail.fr",
