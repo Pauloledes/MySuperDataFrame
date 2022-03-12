@@ -8,7 +8,7 @@ py :
 
 git :
 	git commit -am 'new release'
-	git push origin master
+	git push origin main
 
 pip :
 	# pip install --upgrade packageName
