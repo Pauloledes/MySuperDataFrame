@@ -13,26 +13,6 @@ class MySuperDF(pd.DataFrame):
     def from_csv(cls, *args, **kwargs):
         return cls(pd.read_csv(*args, **kwargs))
 
-    # def get_numeric_data(self):
-    #     my_numerical_data = []
-    #     for i, j in zip(self.dtypes, self.columns):
-    #         if i == 'float64':
-    #             my_numerical_data.append(j)
-    #     return self[my_numerical_data]
-    #
-    # def get_bool_data(self):
-    #     my_bool_data = []
-    #     for i, j in zip(self.dtypes, self.columns):
-    #         if i == 'bool':
-    #             my_bool_data.append(j)
-    #     return self[my_bool_data]
-    #
-    # def get_object_data(self):
-    #     my_object_data = []
-    #     for i, j in zip(self.dtypes, self.columns):
-    #         if i == 'object':
-    #             my_object_data.append(j)
-    #     return self[my_object_data]
     @property
     def filter_numeric(self):
         return filter_df(self, 'float64')
@@ -69,19 +49,6 @@ class MySuperDF(pd.DataFrame):
 
         # Sorting the features by number of missing_values
         return MySuperDF(results.dropna(subset=['filling_rate']))
-
-
-
-
-    # POSSIBLE_TYPES = {'numeric': 'float64', 'bool': 'bool', 'object': 'object'}
-    #
-    # def __getattr__(self, item):
-    #     y = item[7:]
-    #     print(y)
-    #     if item.startswith('filter_') and y in self.POSSIBLE_TYPES:
-    #         return filter_df(self, self.POSSIBLE_TYPES[y])
-    #     else:
-    #         return super().__getattribute__(item)
 
 
 def filter_df(df, selected_type:Union[str, List[str]]) -> T:
