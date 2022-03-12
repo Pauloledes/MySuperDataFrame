@@ -1,4 +1,4 @@
-all : py git pip
+all : py git
 
 py :
 	python increaseVersionSetup.py
@@ -10,5 +10,3 @@ git :
 	git commit -am 'new release'
 	git push origin main
 
-pip :
-	echo "You can run: `pip install --upgrade packageName`"
